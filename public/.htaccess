@@ -1,0 +1,20 @@
+<IfModule mod_rewrite.c>
+  # Turn on rewriting
+  RewriteEngine On
+
+  # If your public folder is your document root, you can use:
+  RewriteBase /
+
+  # Prevent direct access to .htaccess and other sensitive files
+  <FilesMatch "^\.">
+    Require all denied
+  </FilesMatch>
+
+  # If the requested file or directory exists, skip rewriting.
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Otherwise, rewrite all requests to index.php.
+  RewriteRule ^ index.php [L,QSA]
+</IfModule>
