@@ -1,11 +1,11 @@
 <?php
-namespace App\Core\Controllers; // or Core\Controllers, up to you
+namespace App\Core\Controllers;
 
-class DashboardController
+class DashboardController extends BaseController
 {
     public function renderDashboardView()
     {
-        echo "Welcome to the Dashboard!";
-        // or $this->render('path/to/dashboard/view.php');
+        // This calls the BaseController's render() by default
+        $this->render(__DIR__ . '/../Views/DashboardView.php');
     }
 }

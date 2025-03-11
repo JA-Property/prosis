@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Auth Layout</title>
 </head>
 <body>
-    global auth layout
+    <h1>Authentication Layout</h1>
+    <hr>
+    <!-- Embed the Auth-specific content -->
+    <?= $content ?? '' ?>
 </body>
 </html>

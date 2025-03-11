@@ -9,22 +9,22 @@ class BaseController
         bool $useGlobalLayout = true, 
         string $layoutFile = __DIR__ . '/../Views/Layouts/GlobalLayout.php'
     ) {
-        // Extract data
+        // Extract data for the view
         extract($data);
 
-        // Render the view content
+        // Render the view file's raw content
         ob_start();
         require $viewFile;
         $viewContent = ob_get_clean();
 
-        // If $useGlobalLayout, wrap in chosen $layoutFile
+        // If using a layout, embed the view content in that layout
         if ($useGlobalLayout && file_exists($layoutFile)) {
-            $content = $viewContent;
+            $content = $viewContent;  // pass $viewContent into $content
             ob_start();
-            require $layoutFile;
+            require $layoutFile;      // e.g. global layout
             echo ob_get_clean();
         } else {
-            // Output the view content directly
+            // Otherwise, output the view content directly
             echo $viewContent;
         }
     }
