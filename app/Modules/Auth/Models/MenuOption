@@ -1,29 +1,16 @@
 <?php
-
 namespace App\Modules\Auth\Models;
-
 
 use Illuminate\Database\Eloquent\Model;
 
 class MenuOption extends Model
 {
-    protected $table = 'menu_options'; // or if the default isn't correct
+    protected $table = 'menu_options'; // or whatever your table name is
 
-    // If no timestamps in table:
     public $timestamps = false;
-    
-    // Mass assignment fields if you want:
-    protected $fillable = ['label', 'icon', 'link', 'parent_id', 'sort_order'];
 
-    // Relationship: one menu_option can have many children
     public function children()
     {
         return $this->hasMany(MenuOption::class, 'parent_id');
-    }
-
-    // Relationship: parent menu_option
-    public function parent()
-    {
-        return $this->belongsTo(MenuOption::class, 'parent_id');
     }
 }

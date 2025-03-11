@@ -1,6 +1,7 @@
 <?php
 
 use App\Modules\Auth\Controllers\LoginController;
+use App\Core\Controllers\MenuController;
 return [
     
     [

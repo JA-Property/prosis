@@ -1,15 +1,24 @@
 <?php
 namespace App\Modules\Auth\Models;
-class User
+
+use Illuminate\Database\Eloquent\Model;
+
+class User extends Model
 {
+    // If your table is "users", Eloquent uses that by default.
+    // If you have no timestamps, disable them:
+    // public $timestamps = false;
+
     public function menuOptions()
     {
+        // 'user_menu_options' is the pivot table name
+        // 'user_id' is the foreign key on the pivot referencing users
+        // 'menu_option_id' is the foreign key on the pivot referencing menu_options
         return $this->belongsToMany(
-            \App\Modules\Auth\Models\MenuOption::class,
-            'user_menu_options',        // pivot table
-            'user_id',                  // foreign key on pivot (user)
-            'menu_option_id'            // foreign key on pivot (menu_option)
+            MenuOption::class,
+            'user_menu_options',
+            'user_id',
+            'menu_option_id'
         );
     }
-    
 }
