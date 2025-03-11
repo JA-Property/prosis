@@ -38,7 +38,7 @@ $dotenv = Dotenv::createImmutable($envPath);
 $dotenv->load();
 
 // 1) Instantiate our Router
-$router = new Router(__DIR__ . '/../app/modules');
+$router = new Router(__DIR__ . '/../app/Modules');
 
 // 2) Dispatch the current request
 $router->dispatch();

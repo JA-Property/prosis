@@ -1,5 +1,5 @@
 <?php
-namespace App\Controllers; // or Core\Controllers, up to you
+namespace App\Core\Controllers; // or Core\Controllers, up to you
 
 class DashboardController
 {

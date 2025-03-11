@@ -59,7 +59,7 @@ class Router
         $routes = [];
     
         // 1) Load any global routes in app/routes.php
-        $globalRoutesFile = __DIR__ . '/../../routes.php'; 
+        $globalRoutesFile = __DIR__ . '/../routes.php';
         // adjust the relative path depending on your structure
         if (file_exists($globalRoutesFile)) {
             $globalRoutes = require $globalRoutesFile;

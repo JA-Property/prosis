@@ -1,5 +1,5 @@
 <?php
-namespace Core\Controllers;
+namespace App\Core\Controllers;
 
 class BaseController
 {
