@@ -1,6 +1,6 @@
 <?php
 
-use App\Controllers\DashboardController;
+use App\Core\Controllers\DashboardController;
 
 return [
     [
