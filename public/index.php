@@ -4,8 +4,7 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 use Dotenv\Dotenv;
-use FastRoute\RouteCollector;
-use function FastRoute\simpleDispatcher;
+use App\Core\Router;
 
 // --------------------------------------------
 // 1) Load Environment
@@ -37,10 +36,9 @@ if (!file_exists($envPath . '.env')) {
 
 $dotenv = Dotenv::createImmutable($envPath);
 $dotenv->load();
-use Core\Router;
 
 // 1) Instantiate our Router
-$router = new Router(__DIR__ . '/../modules');
+$router = new Router(__DIR__ . '/../app/modules');
 
 // 2) Dispatch the current request
 $router->dispatch();

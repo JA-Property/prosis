@@ -1,5 +1,5 @@
 <?php
-namespace Core;
+namespace App\Core;
 
 use FastRoute\RouteCollector;
 use function FastRoute\simpleDispatcher;
@@ -54,20 +54,28 @@ class Router
                 break;
         }
     }
-
     private function collectRoutes(): array
     {
         $routes = [];
-
-        // 1) Loop through each module directory
+    
+        // 1) Load any global routes in app/routes.php
+        $globalRoutesFile = __DIR__ . '/../../routes.php'; 
+        // adjust the relative path depending on your structure
+        if (file_exists($globalRoutesFile)) {
+            $globalRoutes = require $globalRoutesFile;
+            if (is_array($globalRoutes)) {
+                $routes = array_merge($routes, $globalRoutes);
+            }
+        }
+    
+        // 2) Loop through each module directory
         foreach (scandir($this->modulesDir) as $module) {
             if ($module === '.' || $module === '..') {
                 continue;
             }
             $path = $this->modulesDir . '/' . $module;
             $routesFile = $path . '/routes.php';
-
-            // 2) If there's a routes.php file, require it
+    
             if (is_dir($path) && file_exists($routesFile)) {
                 $moduleRoutes = require $routesFile;
                 if (is_array($moduleRoutes)) {
@@ -75,9 +83,10 @@ class Router
                 }
             }
         }
-
+    
         return $routes;
     }
+    
 
     private function invokeHandler(array $handler, array $vars): void
     {

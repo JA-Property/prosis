@@ -1,21 +1,10 @@
 <?php
 
-use Modules\Auth\src\Controllers\LoginController;
-
+use App\Modules\Auth\Controllers\LoginController;
 return [
     [
         'method'  => 'GET',
         'path'    => '/auth/login',
-        'handler' => [LoginController::class, 'showLoginForm']
+        'handler' => [LoginController::class, 'renderLoginFormView']
     ],
-    [
-        'method'  => 'POST',
-        'path'    => '/auth/login',
-        'handler' => [LoginController::class, 'processLogin']
-    ],
-    [
-        'method'  => 'GET',
-        'path'    => '/auth/logout',
-        'handler' => [LoginController::class, 'logout']
-    ]
 ];
