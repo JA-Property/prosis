@@ -172,14 +172,14 @@
   /**
    * Fetch menu.json to populate the sidebar.
    */
-  fetch('menu.json')
+  fetch('/menu')
     .then((response) => response.json())
     .then((data) => {
       sidebarMenu = data;
       generateSidebar(sidebarMenu);
     })
     .catch((err) => {
-      console.error('Error loading menu.json:', err);
+      console.error('Error loading menu:', err);
     });
 </script>
 </body>

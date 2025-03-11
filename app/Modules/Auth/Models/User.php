@@ -2,16 +2,14 @@
 namespace App\Modules\Auth\Models;
 class User
 {
-    // If using an ORM like Eloquent or Doctrine, 
-    // you'd define relationships. For example in Eloquent:
-    public function permissions()
+    public function menuOptions()
     {
-        return $this->belongsToMany(Permission::class, 'user_permissions');
+        return $this->belongsToMany(
+            \App\Modules\Auth\Models\MenuOption::class,
+            'user_menu_options',        // pivot table
+            'user_id',                  // foreign key on pivot (user)
+            'menu_option_id'            // foreign key on pivot (menu_option)
+        );
     }
-
-    public function hasPermission($permissionName)
-    {
-        // Eloquent example: 
-        return $this->permissions->contains('name', $permissionName);
-    }
+    
 }
