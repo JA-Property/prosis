@@ -1,7 +1,7 @@
     <!-- Left: Logo + Title -->
     <div class="flex items-center px-4 space-x-2">
       <i class="fas fa-paragraph text-2xl"></i>
-      <span class="font-bold text-lg">PowerSchool SIS</span>
+      <span class="font-bold text-lg">Pro SIS</span>
     </div>
   
 <!-- Center: Responsive, enterprise-style search bar (small on small screens, grows on larger) -->
