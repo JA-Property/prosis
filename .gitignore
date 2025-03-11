@@ -1,0 +1,81 @@
+# ----------------------------------------------------------------
+# PHP Composer & Dependency Management
+# ----------------------------------------------------------------
+# Ignore Composer's vendor directory (dependencies)
+vendor/
+
+# Optionally ignore Composer lock file (if you’re building a library instead of an application, but generally commit it for apps)
+composer.lock
+
+# ----------------------------------------------------------------
+# Node & Frontend Dependencies (if applicable)
+# ----------------------------------------------------------------
+# Ignore Node modules directory
+node_modules/
+
+# Ignore front-end build artifacts (e.g. if using Webpack, TailwindCSS build output, etc.)
+public/build/
+public/css/*.css
+public/js/*.js
+
+# Allow committed placeholder files if needed (uncomment if used)
+#!public/css/.gitkeep
+#!public/js/.gitkeep
+
+# ----------------------------------------------------------------
+# Environment and Configuration Files
+# ----------------------------------------------------------------
+# Ignore environment configuration files containing sensitive data
+.env
+.env.*.local
+
+# Local configuration files (if used)
+config/local.php
+config/local.ini
+
+# ----------------------------------------------------------------
+# Logs, Cache, and Temporary Files
+# ----------------------------------------------------------------
+# Application log files and temporary storage
+logs/
+tmp/
+cache/
+
+# ----------------------------------------------------------------
+# IDEs and Editors
+# ----------------------------------------------------------------
+# JetBrains IDEs (PhpStorm, IntelliJ, etc.)
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# Other editors (Sublime, etc.)
+*.sublime-project
+*.sublime-workspace
+
+# ----------------------------------------------------------------
+# OS Generated Files
+# ----------------------------------------------------------------
+.DS_Store
+Thumbs.db
+
+# ----------------------------------------------------------------
+# Testing & Code Coverage
+# ----------------------------------------------------------------
+# PHPUnit configuration and coverage reports
+phpunit.xml
+phpunit.xml.dist
+coverage/
+
+# ----------------------------------------------------------------
+# Miscellaneous
+# ----------------------------------------------------------------
+# Swap files and temporary backup files
+*.swp
+*.swo
+*~
+
+# Ignore any log files from the system
+*.log
