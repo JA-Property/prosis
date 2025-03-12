@@ -69,8 +69,13 @@ session_start();
 if (!isset($_SESSION['user'])) {
     $_SESSION['user'] = [
         'id'       => 1,
-        'username' => 'testuser',
-        'role'     => 'admin'
+        'email' => 'testuser',
+        'password_hash' => 'fadsfdsfdsaaf',
+        'display_name' => 'John Doe',
+        'initials' => 'JD',
+        'role'     => 'admin',
+        'primary_school' => 'JD',
+        'primary_term' => 'JD'
     ];
 }
 
